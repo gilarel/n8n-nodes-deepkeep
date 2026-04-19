@@ -17,7 +17,7 @@ import {
 export class DeepKeepApi implements ICredentialType {
   name = 'deepKeepApi';
   displayName = 'DeepKeep API';
-  documentationUrl = 'https://docs.deepkeep.ai';
+  documentationUrl = 'https://deepkeep.ai/docs/api';
 
   properties: INodeProperties[] = [
     {

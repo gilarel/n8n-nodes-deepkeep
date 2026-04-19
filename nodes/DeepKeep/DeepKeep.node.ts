@@ -38,8 +38,8 @@ export class DeepKeep implements INodeType {
     defaults: {
       name: 'DeepKeep',
     },
-    inputs: ['main' as NodeConnectionType],
-    outputs: ['main' as NodeConnectionType],
+    inputs: ['main'],
+    outputs: ['main'],
     credentials: [
       {
         name: 'deepKeepApi',
@@ -73,19 +73,19 @@ export class DeepKeep implements INodeType {
         },
         options: [
           {
-            name: 'Check input',
+            name: 'Check Input',
             value: 'checkInput',
             description: 'Check prompt against defined guardrails',
             action: 'Check prompt against defined guardrails',
           },
           {
-            name: 'Create conversation',
+            name: 'Create Conversation',
             value: 'createConversation',
             description: 'Create a new conversation in a firewall',
             action: 'Create a new conversation in a firewall',
           },
           {
-            name: 'Make API call',
+            name: 'Make API Call',
             value: 'makeApiCall',
             description: 'Performs an arbitrary authorized API call',
             action: 'Perform an arbitrary authorized API call',
@@ -150,7 +150,7 @@ export class DeepKeep implements INodeType {
         type: 'boolean',
         default: false,
         description:
-          'When enabled, DeepKeep logs the request and returns <b>all</b> detected violations in the response. When disabled, the response may include only the primary violation. Enable this for audit, debugging, or when you need the complete violation list.',
+          'Whether to log the request and return <b>all</b> detected violations in the response. When disabled, the response may include only the primary violation. Enable this for audit, debugging, or when you need the complete violation list.',
         displayOptions: {
           show: {
             resource: ['firewallConversation'],
@@ -201,8 +201,7 @@ export class DeepKeep implements INodeType {
         type: 'fixedCollection',
         typeOptions: { multipleValues: true },
         placeholder: 'Add Header',
-        description:
-          "You don't have to add authorization headers; we already did that for you.",
+        description: 'You don\'t have to add authorization headers; we already did that for you',
         default: {
           parameter: [{ key: 'Content-Type', value: 'application/json' }],
         },
