@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-deepkeep",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "n8n community node for the DeepKeep AI Firewall API",
   "keywords": [
     "n8n-community-node-package",
