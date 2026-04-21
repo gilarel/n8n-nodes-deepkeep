@@ -334,12 +334,14 @@ export class DeepKeep implements INodeType {
             try {
               raw = await doRequest();
             } catch {
-              throw new Error(
+              throw new NodeOperationError(
+                this.getNode(),
                 'DeepKeep is rate-limited or warming up. Try again in a moment.',
               );
             }
           } else {
-            throw new Error(
+            throw new NodeOperationError(
+              this.getNode(),
               `Could not list firewalls: ${(error as Error).message}`,
             );
           }
